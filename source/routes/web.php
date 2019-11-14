@@ -12,15 +12,14 @@
 */
 
 Route::group([
-    'prefix' => '/vongquay/'
+    'prefix' => '/'
 ], function () {
     Route::group([
-        'middleware' => array()
+        'middleware' => []
     ], function () {
         Route::get('register', 'VongQuay\VongQuayController@register');
         Route::get('start', 'VongQuay\VongQuayController@start');
         Route::get('test', 'VongQuay\VongQuayController@test');
         Route::get('{sCuaHangId}', 'VongQuay\VongQuayController@home');
-
     });
 });
