@@ -1,0 +1,1302 @@
+{
+  "items": {
+    "giam-35": {
+      "id": "1",
+      "name": "Giảm 35%",
+      "result": 110
+    },
+    "giam-15": {
+      "id": "2",
+      "name": "Giảm 15%",
+      "result": 290
+    },
+    "phieu-tap": {
+      "id": "3",
+      "name": "Phiếu tập",
+      "result": 155
+    },
+    "du-mv": {
+      "id": "4",
+      "name": "Dù MV",
+      "result": 200
+    },
+    "vali": {
+      "id": "5",
+      "name": "Vali Cao Cấp",
+      "result": 65
+    },
+    "binh-giu-nhiet": {
+      "id": "6",
+      "name": "Bình giữ nhiệt",
+      "result": 335
+    },
+    "tui-hangten": {
+      "id": "7",
+      "name": "Túi Hangten",
+      "result": 245
+    },
+    "ve-sinh-mat-kinh": {
+      "id": "8",
+      "name": "Bộ vệ sinh mắt kính",
+      "result": 20
+    }
+  },
+  "CH-HaoPhat-BL": {
+    "name": "Hào Phát Bảo Lộc",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "11",
+        "number": "14"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "6",
+        "number": "8"
+      },
+      "tui-hangten": {
+        "percent": "3",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "75",
+        "number": "94"
+      }
+    }
+  },
+  "CH-AEON-BD-B": {
+    "name": "AEON Bình Dương B",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "3",
+        "number": "3"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "4",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "4",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "84",
+        "number": "75"
+      }
+    }
+  },
+  "CH-AEON-BT-B": {
+    "name": "AEON Bình Tân B",
+    "items": {
+      "giam-35": {
+        "percent": "39",
+        "number": "20"
+      },
+      "giam-15": {
+        "percent": "51",
+        "number": "26"
+      },
+      "phieu-tap": {
+        "percent": "4",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "6",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "0",
+        "number": "0"
+      }
+    }
+  },
+  "CH-AEON-TP-B": {
+    "name": "AEON Tân Phú B",
+    "items": {
+      "giam-35": {
+        "percent": "7",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "7",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "27",
+        "number": "4"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "20",
+        "number": "3"
+      },
+      "tui-hangten": {
+        "percent": "27",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "0",
+        "number": "0"
+      }
+    }
+  },
+  "CH-LOTTE-CT": {
+    "name": "Lotte Cần Thơ",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "9",
+        "number": "5"
+      },
+      "du-mv": {
+        "percent": "22",
+        "number": "12"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "7",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "55",
+        "number": "30"
+      }
+    }
+  },
+  "CH-METRO-APhu": {
+    "name": "Metro An Phú",
+    "items": {
+      "giam-35": {
+        "percent": "38",
+        "number": "21"
+      },
+      "giam-15": {
+        "percent": "45",
+        "number": "25"
+      },
+      "phieu-tap": {
+        "percent": "4",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "0",
+        "number": "0"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "13",
+        "number": "7"
+      }
+    }
+  },
+  "CH-SHOPHOUSE-BH": {
+    "name": "Shophouse Biên Hoà",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "1",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "17",
+        "number": "19"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "4",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "76",
+        "number": "85"
+      }
+    }
+  },
+  "CH-VINCOM-BN": {
+    "name": "Vincom Bắc Ninh",
+    "items": {
+      "giam-35": {
+        "percent": "36",
+        "number": "20"
+      },
+      "giam-15": {
+        "percent": "45",
+        "number": "25"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "2",
+        "number": "1"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "15",
+        "number": "8"
+      }
+    }
+  },
+  "CH-VINCOM-BL": {
+    "name": "Vincom Bảo Lộc",
+    "items": {
+      "giam-35": {
+        "percent": "3",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "3",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "14",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "14",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "59",
+        "number": "17"
+      }
+    }
+  },
+  "CH-VINCOM-CT": {
+    "name": "Vincom Cần Thơ",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "9",
+        "number": "5"
+      },
+      "du-mv": {
+        "percent": "33",
+        "number": "18"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "9",
+        "number": "5"
+      },
+      "tui-hangten": {
+        "percent": "7",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "35",
+        "number": "19"
+      }
+    }
+  },
+  "CH-VINCOM-HNa": {
+    "name": "Vincom Hà Nam",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "58",
+        "number": "29"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "18",
+        "number": "9"
+      },
+      "tui-hangten": {
+        "percent": "8",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "6",
+        "number": "3"
+      }
+    }
+  },
+  "CH-VINCOM-HPhong": {
+    "name": "Vincom Hải Phòng",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "7",
+        "number": "8"
+      },
+      "tui-hangten": {
+        "percent": "3",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "84",
+        "number": "91"
+      }
+    }
+  },
+  "CH-VINCOM-Hue": {
+    "name": "Vincom Huế",
+    "items": {
+      "giam-35": {
+        "percent": "28",
+        "number": "20"
+      },
+      "giam-15": {
+        "percent": "37",
+        "number": "26"
+      },
+      "phieu-tap": {
+        "percent": "1",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "17",
+        "number": "12"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "6",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "4",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "6",
+        "number": "4"
+      }
+    }
+  },
+  "CH-VINCOM-LVV": {
+    "name": "Vincom Lê Văn Việt",
+    "items": {
+      "giam-35": {
+        "percent": "25",
+        "number": "20"
+      },
+      "giam-15": {
+        "percent": "33",
+        "number": "26"
+      },
+      "phieu-tap": {
+        "percent": "8",
+        "number": "6"
+      },
+      "du-mv": {
+        "percent": "8",
+        "number": "6"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "3",
+        "number": "2"
+      },
+      "tui-hangten": {
+        "percent": "5",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "18",
+        "number": "14"
+      }
+    }
+  },
+  "CH-VINCOM-LAn": {
+    "name": "Vincom Long An",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "57",
+        "number": "24"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "10",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "10",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "14",
+        "number": "6"
+      }
+    }
+  },
+  "CH-VINCOM-THoa": {
+    "name": "Vincom Thanh Hoá",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "59",
+        "number": "24"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "20",
+        "number": "8"
+      },
+      "tui-hangten": {
+        "percent": "10",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "2",
+        "number": "1"
+      }
+    }
+  },
+  "CH-12-NTN": {
+    "name": "12 Nguyễn Thị Nghĩa",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "1"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "2",
+        "number": "1"
+      },
+      "tui-hangten": {
+        "percent": "7",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "83",
+        "number": "49"
+      }
+    }
+  },
+  "CH-MV-183CMT8": {
+    "name": "183 CMT8",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "6",
+        "number": "7"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "1",
+        "number": "1"
+      },
+      "tui-hangten": {
+        "percent": "4",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "84",
+        "number": "93"
+      }
+    }
+  },
+  "CH-AEON-BD-A": {
+    "name": "AEON Bình Dương A",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "29",
+        "number": "12"
+      },
+      "tui-hangten": {
+        "percent": "5",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "60",
+        "number": "25"
+      }
+    }
+  },
+  "CH-AEON-BT-A": {
+    "name": "Aeon Bình Tân A",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "2"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "13",
+        "number": "13"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "4",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "2",
+        "number": "2"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "78",
+        "number": "79"
+      }
+    }
+  },
+  "CH-AEON-LB": {
+    "name": "AEON LB",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "33",
+        "number": "19"
+      },
+      "du-mv": {
+        "percent": "30",
+        "number": "17"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "14",
+        "number": "8"
+      },
+      "tui-hangten": {
+        "percent": "5",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "0",
+        "number": "0"
+      }
+    }
+  },
+  "CH-AEON-TP-A": {
+    "name": "AEON Tân Phú A",
+    "items": {
+      "giam-35": {
+        "percent": "4",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "0",
+        "number": "0"
+      },
+      "phieu-tap": {
+        "percent": "12",
+        "number": "3"
+      },
+      "du-mv": {
+        "percent": "23",
+        "number": "6"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "12",
+        "number": "3"
+      },
+      "tui-hangten": {
+        "percent": "15",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "23",
+        "number": "6"
+      }
+    }
+  },
+  "CH-CRESCENT-MALL": {
+    "name": "Crescent Mall",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "2",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "15",
+        "number": "15"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "20",
+        "number": "20"
+      },
+      "tui-hangten": {
+        "percent": "4",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "51",
+        "number": "52"
+      }
+    }
+  },
+  "CH-LANDMARK": {
+    "name": "Landmark 81",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "12",
+        "number": "16"
+      },
+      "du-mv": {
+        "percent": "13",
+        "number": "18"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "1",
+        "number": "1"
+      },
+      "tui-hangten": {
+        "percent": "3",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "69",
+        "number": "94"
+      }
+    }
+  },
+  "CH-SG-CENTRE": {
+    "name": "Saigon Centre",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "3",
+        "number": "2"
+      },
+      "du-mv": {
+        "percent": "23",
+        "number": "17"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "3",
+        "number": "2"
+      },
+      "tui-hangten": {
+        "percent": "5",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "63",
+        "number": "46"
+      }
+    }
+  },
+  "CH-SALA": {
+    "name": "Sala Quận 2",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "45",
+        "number": "20"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "5",
+        "number": "2"
+      },
+      "tui-hangten": {
+        "percent": "9",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "25",
+        "number": "11"
+      }
+    }
+  },
+  "CH-SCVIVO": {
+    "name": "SCVIVO",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "21",
+        "number": "20"
+      },
+      "du-mv": {
+        "percent": "19",
+        "number": "18"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "1",
+        "number": "1"
+      },
+      "tui-hangten": {
+        "percent": "3",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "49",
+        "number": "47"
+      }
+    }
+  },
+  "CH-SHOPHOUSE-QH": {
+    "name": "SHOPHOUSE Quốc Hương",
+    "items": {
+      "giam-35": {
+        "percent": "0",
+        "number": "0"
+      },
+      "giam-15": {
+        "percent": "0",
+        "number": "0"
+      },
+      "phieu-tap": {
+        "percent": "19",
+        "number": "27"
+      },
+      "du-mv": {
+        "percent": "10",
+        "number": "15"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "1",
+        "number": "1"
+      },
+      "tui-hangten": {
+        "percent": "3",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "66",
+        "number": "95"
+      }
+    }
+  },
+  "CH-VINCOM-BHoa": {
+    "name": "Vincom Biên Hoà",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "28",
+        "number": "20"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "7",
+        "number": "5"
+      },
+      "tui-hangten": {
+        "percent": "6",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "57",
+        "number": "41"
+      }
+    }
+  },
+  "CH-VINCOM-DNang": {
+    "name": "Vincom Đà Nẵng",
+    "items": {
+      "giam-35": {
+        "percent": "1",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "1",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "9",
+        "number": "17"
+      },
+      "du-mv": {
+        "percent": "10",
+        "number": "19"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "5",
+        "number": "9"
+      },
+      "tui-hangten": {
+        "percent": "2",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "73",
+        "number": "139"
+      }
+    }
+  },
+  "CH-VINCOM-Royal": {
+    "name": "Royal City",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "7",
+        "number": "4"
+      },
+      "du-mv": {
+        "percent": "39",
+        "number": "24"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "13",
+        "number": "8"
+      },
+      "tui-hangten": {
+        "percent": "7",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "28",
+        "number": "17"
+      }
+    }
+  },
+  "CH-VINCOM-TDien": {
+    "name": "Vincom Thảo Điền",
+    "items": {
+      "giam-35": {
+        "percent": "24",
+        "number": "21"
+      },
+      "giam-15": {
+        "percent": "30",
+        "number": "26"
+      },
+      "phieu-tap": {
+        "percent": "7",
+        "number": "6"
+      },
+      "du-mv": {
+        "percent": "12",
+        "number": "10"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "5",
+        "number": "4"
+      },
+      "tui-hangten": {
+        "percent": "5",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "16",
+        "number": "14"
+      }
+    }
+  },
+  "CH-XK-CT": {
+    "name": "Xuân Khánh Cần Thơ",
+    "items": {
+      "giam-35": {
+        "percent": "2",
+        "number": "1"
+      },
+      "giam-15": {
+        "percent": "2",
+        "number": "1"
+      },
+      "phieu-tap": {
+        "percent": "24",
+        "number": "15"
+      },
+      "du-mv": {
+        "percent": "10",
+        "number": "6"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "5",
+        "number": "3"
+      },
+      "tui-hangten": {
+        "percent": "6",
+        "number": "4"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "43",
+        "number": "27"
+      }
+    }
+  },
+  "CH-SENSE-CITY": {
+    "name": "SENSE CITY",
+    "items": {
+      "giam-35": {
+        "percent": "0",
+        "number": "0"
+      },
+      "giam-15": {
+        "percent": "0",
+        "number": "0"
+      },
+      "phieu-tap": {
+        "percent": "0",
+        "number": "0"
+      },
+      "du-mv": {
+        "percent": "0",
+        "number": "0"
+      },
+      "vali": {
+        "percent": "0",
+        "number": "0"
+      },
+      "binh-giu-nhiet": {
+        "percent": "0",
+        "number": "0"
+      },
+      "tui-hangten": {
+        "percent": "2",
+        "number": "3"
+      },
+      "ve-sinh-mat-kinh": {
+        "percent": "119",
+        "number": "95"
+      }
+    }
+  }
+}

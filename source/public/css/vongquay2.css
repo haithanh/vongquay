@@ -1,0 +1,307 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: url('../img/vongquay2/bg-desktop.jpg') #4d3f88 no-repeat top center;
+    background-size: cover;
+    font-family: 'Arial';
+}
+
+.hns-spinner {
+    width: 520px;
+    height: 520px;
+    margin: 270px auto 0;
+    position: relative;
+}
+
+.hns-spinner-bg {
+    width: 520px;
+    height: 520px;
+    background: url('../img/vongquay2/vongquay--bg.png') no-repeat top center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    margin: 0 auto;
+}
+
+.hns-controls {
+    margin: 20px 0;
+}
+
+.hns-start-button {
+    width: 100px;
+    height: 117px;
+    background: url('../img/vongquay2/btn-off.png') no-repeat top center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 195px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.hns-arrow {
+    width: 140px;
+    height: 113px;
+    background: url('../img/vongquay2/btn-arrow.png') no-repeat top center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 195px;
+    left: 435px;
+    right: 0;
+}
+
+.hns-start-button:hover, .hns-start-button.start {
+    background: url('../img/vongquay2/btn-on.png') no-repeat top center;
+    background-size: cover;
+}
+
+.hns-thele {
+    background: #f6d44d;
+    color: #af682c !important;
+    text-transform: uppercase;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 25px;
+    border: none;
+    display: block;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/**
+    The le modal
+ */
+.hns-scroll-y {
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+.hns-modal-header {
+    border-bottom: none;
+    padding: 0.5rem 1rem;
+}
+
+.hns-thele-body {
+    border: none;
+    padding: 0 1rem;
+}
+
+.hns-thele-body .hns-thele-content {
+    padding: 1rem;
+    background: #fcec96;
+    color: #460404;
+    font-size: 17px;
+}
+
+.hns-modal-footer {
+    border-top: none;
+    padding: 0.5rem 1rem;
+}
+
+.hns-btn-close {
+    margin: 0 auto;
+    border: 1px solid #460404;
+    background: #ff7200;
+    color: #ffffff !important;
+    padding: 5px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.orbit {
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: orbit;
+    -webkit-animation-duration: 1s;
+}
+
+.paused {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes orbit {
+    from {
+        -webkit-transform: rotate(20deg)
+    }
+    to {
+        -webkit-transform: rotate(380deg)
+    }
+}
+
+@-moz-keyframes orbit {
+    from {
+        -moz-transform: rotate(20deg)
+    }
+    to {
+        -moz-transform: rotate(380deg)
+    }
+}
+
+@-o-keyframes orbit {
+    from {
+        -o-transform: rotate(20deg)
+    }
+    to {
+        -o-transform: rotate(380deg)
+    }
+}
+
+@-ms-keyframes orbit {
+    from {
+        -ms-transform: rotate(20deg)
+    }
+    to {
+        -ms-transform: rotate(380deg)
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(20deg)
+    }
+    to {
+        transform: rotate(380deg)
+    }
+}
+
+/**
+    Modal Register
+ */
+#register-modal {
+    color: #532c05;
+}
+
+#register-modal .modal-content {
+    background: url('../img/vongquay2/hoamai.png') #FFF no-repeat top left;
+}
+
+#register-modal .modal-body {
+    margin-top: -10px;
+}
+
+#register-modal h4 {
+    text-align: center;
+}
+
+#register-modal .hns-sub {
+    text-align: center;
+    width: 175px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+#register-modal #hns-register-form {
+    margin-top: 30px;
+}
+
+#register-modal #hns-register-form input {
+    background: #fcec96;
+    border: none;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 1400px) {
+    .hns-spinner {
+        margin: 220px auto 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        background: url('../img/vongquay2/bg-ipad.jpg') #4d3f88 no-repeat top center;
+        background-size: cover;
+    }
+
+    .hns-spinner {
+        margin: 270px auto 0;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        background: url('../img/vongquay2/bg-ipad.jpg') #4d3f88 no-repeat top center;
+        background-size: cover;
+    }
+
+    .hns-spinner {
+        margin: 270px auto 0;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: url('../img/vongquay2/bg-ipad.jpg') #4d3f88 no-repeat top center;
+        background-size: cover;
+    }
+
+    .hns-spinner {
+        margin: 220px auto 0;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    body {
+        background: url('../img/vongquay2/bg-mobile.jpg') #4d3f88 no-repeat top center;
+        background-size: cover;
+    }
+
+    .hns-spinner {
+        width: 225px;
+        height: 225px;
+        margin: 225px auto 0;
+        position: relative;
+    }
+
+    .hns-spinner-bg {
+        width: 225px;
+        height: 225px;
+        background: url('../img/vongquay2/vongquay--bg.png') no-repeat top center;
+        background-size: cover;
+    }
+
+    .hns-start-button {
+        width: 50px;
+        height: 58px;
+        top: 79px;
+    }
+
+    .hns-arrow {
+        width: 70px;
+        height: 56px;
+        top: 82px;
+        left: 181px;
+    }
+
+    .hns-thele {
+        width: 150px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    .hns-spinner {
+        margin: 160px auto 0;
+        position: relative;
+    }
+}
