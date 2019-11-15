@@ -33,7 +33,8 @@ class Code extends Model
     protected $fillable = [
         'store_id',
         'item_id',
-        'code'
+        'code',
+        'status'
     ];
 
     public function item()
