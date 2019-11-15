@@ -21,6 +21,7 @@ class CreateCode extends Migration
             $table->integer('store_id');
             $table->integer('item_id');
             $table->text('code');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

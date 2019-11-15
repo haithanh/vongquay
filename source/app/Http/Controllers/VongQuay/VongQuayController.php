@@ -2,35 +2,29 @@
 
 namespace App\Http\Controllers\VongQuay;
 
+use App\Code;
+use App\History;
 use App\Http\Controllers\Controller;
-use App\VongQuay;
+use App\Item;
+use App\ItemToStore;
+use App\Store;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 
 class VongQuayController extends Controller
 {
-    private $aConfigs        = null;
-    private $sAccessToken    = '33hyckgy8zhftqmqjbjv3zaa';
-    private $sRefreshToken   = 'p3aky7kxgpv6sxgp27dqaqy7';
-    private $iTagId          = 1228;
-    private $sInClientId     = 'banuwvz5hmt3zxxq6s8a6j3q';
-    private $sInClientSecret = 'a3bMStUpF5';
-
-    public function __construct()
-    {
-        $this->aConfigs = json_decode(file_get_contents(resource_path('config/config.json')), true);
-    }
-
     public function home(Request $request, $sCuaHangId)
     {
-        $sErrors = $this->checkConfigs($sCuaHangId);
-        if (!$sErrors) {
-            $request->session()->put('sCuaHangId', $sCuaHangId);
-        }
+        $oStore   = Store::whereSeo($sCuaHangId)->first();
+        $sErrors  = '';
         $bEmpty   = false;
-        $aRewards = $this->getArrayReward($sCuaHangId);
-        if (empty($aRewards)) {
-            $bEmpty = true;
+        if (!empty($oStore)) {
+            $request->session()->put('sCuaHangId', $sCuaHangId);
+            $aRewards = $this->getArrayReward($oStore);
+            if (empty($aRewards)) {
+                $bEmpty = true;
+            }
+        } else {
+            $sErrors = 'Không tìm thấy cửa hàng';
         }
 
         return view('vong-quay/home2', [
@@ -45,17 +39,18 @@ class VongQuayController extends Controller
         $sName      = $request->get('name');
         $sEmail     = $request->get('email');
         $sCuaHangId = $request->session()->get('sCuaHangId');
-        $sError     = $this->checkConfigs($sCuaHangId);
-        if ($sError) {
-            $aResult['msg'] = $sError;
-
-            return response()->json($aResult);
-        }
-        $aResult = [
+        $oStore     = Store::whereSeo($sCuaHangId)->first();
+        $aResult    = [
             'code' => 0,
             'msg'  => '',
             'data' => []
         ];
+        if (empty($oStore)) {
+            $aResult['msg'] = 'Cửa hàng không tồn tại';
+
+            return response()->json($aResult);
+        }
+
         if (empty($sName)) {
             $aResult['msg'] = 'Tên không được bỏ trống';
 
@@ -83,7 +78,7 @@ class VongQuayController extends Controller
             }
         }
 
-        $oExist = VongQuay::wherePhone($sPhone)->first();
+        $oExist = History::wherePhone($sPhone)->whereBetween('created_at', [date('Y-m-d 00:00:00'), date('Y-m-d 23:59:59')])->first();
 
         if (!empty($oExist)) {
             $aResult['msg'] = 'Số điện thoại đã được đăng kí';
@@ -97,17 +92,14 @@ class VongQuayController extends Controller
              $aResult['msg'] = "Bạn chưa mua hàng trên hệ thống.";
              return response()->json($aResult);
          }*/
-        $oVongQuay              = new VongQuay();
-        $oVongQuay->name        = $sName;
-        $oVongQuay->phone       = $sPhone;
-        $oVongQuay->email       = $sEmail;
-        $oVongQuay->shop_id     = $sCuaHangId;
-        $oVongQuay->shop_name   = $this->aConfigs[$sCuaHangId]['name'];
-        $oVongQuay->reward_id   = 0;
-        $oVongQuay->reward_name = '';
-        if ($oVongQuay->save()) {
+        $oHistory               = new History();
+        $oHistory->name         = $sName;
+        $oHistory->phone        = $sPhone;
+        $oHistory->email        = $sEmail;
+        $oHistory->store_id     = $oStore->id;
+        if ($oHistory->save()) {
             $this->controlTurn($request);
-            $request->session()->put('iVongQuayId', $oVongQuay->id);
+            $request->session()->put('iVongQuayId', $oHistory->id);
         } else {
             $aResult['msg'] = 'Lỗi thêm lượt quay';
 
@@ -128,9 +120,9 @@ class VongQuayController extends Controller
             'data' => []
         ];
         $sCuaHangId = $request->session()->get('sCuaHangId');
-        $sError     = $this->checkConfigs($sCuaHangId);
-        if ($sError) {
-            $aResult['msg'] = $sError;
+        $oStore     = Store::whereSeo($sCuaHangId)->first();
+        if (empty($oStore)) {
+            $aResult['msg'] = 'Cửa hàng không tồn tại';
 
             return response()->json($aResult);
         }
@@ -149,8 +141,8 @@ class VongQuayController extends Controller
             return response()->json($aResult);
         }
 
-        $oVongQuay = VongQuay::find($iVongQuayId);
-        if (empty($oVongQuay)) {
+        $oHistory = History::find($iVongQuayId);
+        if (empty($oHistory)) {
             $aResult['msg'] = 'Không tìm thấy log';
 
             return response()->json($aResult);
@@ -158,7 +150,7 @@ class VongQuayController extends Controller
 
         $this->controlTurn($request, false);
 
-        $aRewards = $this->getArrayReward($sCuaHangId);
+        $aRewards = $this->getArrayReward($oStore);
 
         if (empty($aRewards)) {
             $aResult['msg'] = 'Quà tặng tạm thời đã hết';
@@ -166,23 +158,26 @@ class VongQuayController extends Controller
             return response()->json($aResult);
         }
         $iRandom                = intval(rand(0, count($aRewards) - 1));
-        $sRewardId              = $aRewards[$iRandom];
-        $sRewardName            = $this->aConfigs['items'][$sRewardId]['name'];
-        $oVongQuay->reward_id   = $sRewardId;
-        $oVongQuay->reward_name = $sRewardName;
-        if ($oVongQuay->save()) {
-            $aResult['code'] = 1;
-            $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$sRewardName}</span> <br>
-                        Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
-            $aResult['data'] = [
-                'result' => $this->aConfigs['items'][$sRewardId]['result']
-            ];
-            if (env('APP_ENV') == 'production') {
-                //      $this->inCreateContact($oVongQuay->name, $oVongQuay->phone, $oVongQuay->email, $oVongQuay->reward_name, $oVongQuay->shop_name);
+        $iItemId                = $aRewards[$iRandom];
+        $oHistory->item_id      = $iItemId;
+        $oHistory->save();
+        $oCode = Code::whereStoreId($oStore->id)->whereItemId($iItemId)->whereStatus(0)->first();
+        $oItem = Item::find($iItemId);
+        if (empty($oCode)) {
+            if (empty($aRewards)) {
+                $aResult['msg'] = 'Quà tặng tạm thời đã hết';
+
+                return response()->json($aResult);
             }
-        } else {
-            $aResult['msg'] = 'Không cập nhật được log';
         }
+        $oHistory->code_id = $oCode->id;
+        $oHistory->save();
+        $aResult['code'] = 1;
+        $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$oItem->name} : {$oCode->code} </span> <br>
+                    Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
+        $aResult['data'] = [
+            'result' => $oItem->angle
+        ];
 
         return response()->json($aResult);
     }
@@ -204,157 +199,22 @@ class VongQuayController extends Controller
         $request->session()->put('iTurn', $iTurn);
     }
 
-    private function getArrayReward($sCuaHangId)
+    private function getArrayReward(Store $oStore)
     {
-        $aShopConfigs  = $this->aConfigs[$sCuaHangId];
+        $oItems        = ItemToStore::whereStoreId($oStore->id)->get();
         $aArrayReward  = [];
-        $iTotalPercent = 0;
-        foreach ($aShopConfigs['items'] as $sRewardId => $aItemConfigs) {
-            $oLimit = VongQuay::whereRewardId($sRewardId)->whereShopId($sCuaHangId)->get();
-            if ($oLimit->count() < $aItemConfigs['number']) {
-                for ($i = 0; $i < $aItemConfigs['percent']; $i++) {
-                    $aArrayReward[] = $sRewardId;
+        if (!empty($oItems) && $oItems->count() > 0) {
+            foreach ($oItems as $oItem) {
+                $oLimit = History::whereItemId($oItem->id)->whereStoreId($oStore->id)->get();
+                if ($oLimit->count() < $oItem->number) {
+                    for ($i = 0; $i < $oItem['percent']; $i++) {
+                        $aArrayReward[] = $oItem->id;
+                    }
                 }
-                $iTotalPercent += $aItemConfigs['percent'];
             }
+            shuffle($aArrayReward);
         }
-        shuffle($aArrayReward);
 
         return $aArrayReward;
-    }
-
-    private function checkConfigs($sCuaHangId)
-    {
-        if (empty($this->aConfigs)) {
-            return 'Chưa cấu hình';
-        }
-
-        if (empty($sCuaHangId)) {
-            return 'Không tìm thấy cửa hàng';
-        }
-
-        if (!isset($this->aConfigs[$sCuaHangId]) || empty($this->aConfigs[$sCuaHangId])) {
-            return 'Không tìm thấy cửa hàng';
-        }
-
-        return false;
-    }
-
-    private function inCheckContact($sEmail)
-    {
-        $this->inRefreshToken();
-        $sAccessToken = Cache::get('inAccessToken');
-
-        $aData = [
-            'limit' => 1,
-            'email' => $sEmail,
-        ];
-        $ch    = curl_init('https://api.infusionsoft.com/crm/rest/v1/contacts?' . http_build_query($aData));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 120);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer ' . $sAccessToken,
-            'Accept: application/json',
-            'Content-Type:application/json'
-        ]);
-        $sResponse = curl_exec($ch);
-        $oResult   = json_decode($sResponse);
-        if (isset($oResult->count) && is_numeric($oResult->count) && $oResult->count > 0) {
-            return $oResult->count;
-        }
-
-        return 0;
-    }
-
-    private function inCreateContact($name, $phone, $email, $reward, $shop)
-    {
-        $this->inRefreshToken();
-        $sAccessToken = Cache::get('inAccessToken');
-
-        $aData = [
-            'given_name'      => $name,
-            'phone_numbers'   => [
-                [
-                    'extension' => '',
-                    'field'     => 'PHONE1',
-                    'number'    => $phone,
-                    'type'      => ''
-                ]
-            ],
-            'email_addresses' => [
-                [
-                    'email' => $email,
-                    'field' => 'EMAIL1'
-                ]
-            ],
-            'notes'           => $reward . '-' . $shop
-        ];
-        $ch    = curl_init('https://api.infusionsoft.com/crm/rest/v1/contacts');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($aData));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 120);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer ' . $sAccessToken,
-            'Accept: application/json',
-            'Content-Type:application/json'
-        ]);
-        $sResponse = curl_exec($ch);
-        $oResult   = json_decode($sResponse);
-        if (isset($oResult->id) && is_numeric($oResult->id)) {
-            $this->inApplyID($oResult->id);
-        }
-    }
-
-    private function inApplyID($contactId)
-    {
-        $this->inRefreshToken();
-        $sAccessToken = Cache::get('inAccessToken');
-
-        $aData = [
-            'tagIds' => [1228]
-        ];
-        $ch    = curl_init("https://api.infusionsoft.com/crm/rest/v1/contacts/{$contactId}/tags");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($aData));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 120);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer ' . $sAccessToken,
-            'Accept: application/json',
-            'Content-Type:application/json'
-        ]);
-        $sResponse = curl_exec($ch);
-        $oResult   = json_decode($sResponse);
-    }
-
-    private function inRefreshToken()
-    {
-        $refreshToken = Cache::get('inRefreshToken');
-        if (empty($refreshToken)) {
-            $refreshToken = $this->sRefreshToken;
-        }
-        $aData = [
-            'grant_type'    => 'refresh_token',
-            'refresh_token' => $refreshToken
-        ];
-        $ch    = curl_init('https://api.infusionsoft.com/token');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($aData));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 120);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Authorization: Basic ' . base64_encode($this->sInClientId . ':' . $this->sInClientSecret),
-            'Accept: application/json, */*'
-        ]);
-        $sResponse = curl_exec($ch);
-        $oResult   = json_decode($sResponse);
-        \Log::info($sResponse);
-        if (isset($oResult->access_token) && !empty($oResult->access_token)) {
-            Cache::put('inAccessToken', $oResult->access_token, 100);
-        }
-        if (isset($oResult->refresh_token) && !empty($oResult->refresh_token)) {
-            Cache::put('inRefreshToken', $oResult->refresh_token, 100);
-        }
     }
 }

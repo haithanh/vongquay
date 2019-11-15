@@ -16,21 +16,24 @@ class CodeSeeder extends Seeder
             [
                 'store_id' => '1',
                 'item_id'  => '1',
-                'code'     => 'A11'
+                'code'     => 'A11',
+                'status'   => 0
             ]
         );
         Code::create(
             [
                 'store_id' => '1',
                 'item_id'  => '2',
-                'code'     => 'B12'
+                'code'     => 'B12',
+                'status'   => 0
             ]
         );
         Code::create(
             [
                 'store_id' => '1',
                 'item_id'  => '1',
-                'code'     => 'A11'
+                'code'     => 'A11',
+                'status'   => 0
             ]
         );
         Code::create(
@@ -44,28 +47,32 @@ class CodeSeeder extends Seeder
             [
                 'store_id' => '1',
                 'item_id'  => '3',
-                'code'     => 'A13'
+                'code'     => 'A13',
+                'status'   => 0
             ]
         );
         Code::create(
             [
                 'store_id' => '1',
                 'item_id'  => '4',
-                'code'     => 'B14'
+                'code'     => 'B14',
+                'status'   => 0
             ]
         );
         Code::create(
             [
                 'store_id' => '1',
                 'item_id'  => '5',
-                'code'     => 'A15'
+                'code'     => 'A15',
+                'status'   => 0
             ]
         );
         Code::create(
             [
                 'store_id' => '1',
                 'item_id'  => '6',
-                'code'     => 'B16'
+                'code'     => 'B16',
+                'status'   => 0
             ]
         );
         Code::create(
@@ -79,7 +86,8 @@ class CodeSeeder extends Seeder
             [
                 'store_id' => '1',
                 'item_id'  => '8',
-                'code'     => 'B18'
+                'code'     => 'B18',
+                'status'   => 0
             ]
         );
     }

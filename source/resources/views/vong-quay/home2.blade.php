@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,160 +19,168 @@
     <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/vongquay2.css?v=1') }}" rel="stylesheet">
 </head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="hns-spinner">
-                <div id="hns-spinner-bg" class="hns-spinner-bg"></div>
-                <div class="hns-arrow"></div>
-                <a href="javascript:;" onclick="startPin();" class="hns-start-button"></a>
-            </div>
-            <div class="hns-controls">
-                <button data-toggle="modal" data-target="#thele-modal" class="hns-thele">Thể lệ</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div id="thele-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header hns-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body hns-thele-body">
-                <div class="hns-thele-content hns-scroll-y">
-                    <h5 style="text-align:center;">RINH LỘC ĐẦU NĂM - MAY MẮN NGẬP TRÀN</h5>
-                    <br>
-                    Mừng xuân Kỷ Hợi, Mắt Việt thực hiện chương trình quà tặng “Vòng quay may mắn” dành cho Quý khách
-                    hàng, áp dụng từ mùng 1 đến hết mùng 6 Tết (tức 05.02 - 10.02.2019) tại tất cả cửa hàng trên toàn hệ
-                    thống.
-                    <br>
-                    <br>
-                    THỂ LỆ CHƯƠNG TRÌNH:
-                    <br>
-                    <br>
-                    Mỗi khách mua hàng tại cửa hàng sẽ có cơ hội nhận 100% quà tặng từ Mắt Việt với nhiều phần quà hấp
-                    dẫn.
-                    <br>
-                    <br>
-                    BAO GỒM:
-                    <br>
-                    <ul>
-                        <li>Vali cao cấp, sang trọng.</li>
-                        <li>Bình giữ nhiệt Lock & Lock 400 ml.</li>
-                        <li> Dù (ô) cao cấp.</li>
-                        <li>Túi đeo Hangten.</li>
-                        <li> Voucher giảm giá 15%.</li>
-                        <li>Bộ vệ sinh mắt kính chuyên dụng.</li>
-                        <li> Phiếu tập</li>
-                        <li> Voucher giảm giá 35%.</li>
-                    </ul>
-                    <br>
-                    Lưu ý:
-                    Số lượng quà tặng có hạn.
-                    Voucher giảm giá không có giá trị quy đổi thành tiền mặt và chỉ áp dụng cho lần mua hàng tiếp theo.
-                    Riêng Voucher giảm giá 35% được giảm tối đa 2 triệu VNĐ cho một đơn hàng.
-                    <br>
-                    <br>
-                    Mọi chi tiết và thắc mắc, vui lòng liên hệ Tổng đài CSKH Mắt Việt theo Hotline: 1900 6081 hoặc gửi
-                    email
-                    về địa chỉ: cskh@matkinh.com.vn.
-                    <br>
-                    <br>
-                    Trân trọng.
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="hns-spinner">
+                    <div id="hns-spinner-bg" class="hns-spinner-bg"></div>
+                    <div class="hns-arrow"></div>
+                    <a href="javascript:;" onclick="startPin();" class="hns-start-button"></a>
+                </div>
+                <div class="hns-controls">
+                    <button data-toggle="modal" data-target="#thele-modal" class="hns-thele">Thể lệ</button>
                 </div>
             </div>
-            <div class="modal-footer hns-modal-footer">
-                <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+        </div>
+    </div>
+
+    <div id="thele-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header hns-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body hns-thele-body">
+                    <div class="hns-thele-content hns-scroll-y">
+                        <h5 style="text-align:center;">RINH LỘC ĐẦU NĂM - MAY MẮN NGẬP TRÀN</h5>
+                        <br>
+                        Mừng xuân Kỷ Hợi, Mắt Việt thực hiện chương trình quà tặng “Vòng quay may mắn” dành cho Quý
+                        khách
+                        hàng, áp dụng từ mùng 1 đến hết mùng 6 Tết (tức 05.02 - 10.02.2019) tại tất cả cửa hàng trên
+                        toàn hệ
+                        thống.
+                        <br>
+                        <br>
+                        THỂ LỆ CHƯƠNG TRÌNH:
+                        <br>
+                        <br>
+                        Mỗi khách mua hàng tại cửa hàng sẽ có cơ hội nhận 100% quà tặng từ Mắt Việt với nhiều phần quà
+                        hấp
+                        dẫn.
+                        <br>
+                        <br>
+                        BAO GỒM:
+                        <br>
+                        <ul>
+                            <li>Vali cao cấp, sang trọng.</li>
+                            <li>Bình giữ nhiệt Lock & Lock 400 ml.</li>
+                            <li> Dù (ô) cao cấp.</li>
+                            <li>Túi đeo Hangten.</li>
+                            <li> Voucher giảm giá 15%.</li>
+                            <li>Bộ vệ sinh mắt kính chuyên dụng.</li>
+                            <li> Phiếu tập</li>
+                            <li> Voucher giảm giá 35%.</li>
+                        </ul>
+                        <br>
+                        Lưu ý:
+                        Số lượng quà tặng có hạn.
+                        Voucher giảm giá không có giá trị quy đổi thành tiền mặt và chỉ áp dụng cho lần mua hàng tiếp
+                        theo.
+                        Riêng Voucher giảm giá 35% được giảm tối đa 2 triệu VNĐ cho một đơn hàng.
+                        <br>
+                        <br>
+                        Mọi chi tiết và thắc mắc, vui lòng liên hệ Tổng đài CSKH Mắt Việt theo Hotline: 1900 6081 hoặc
+                        gửi
+                        email
+                        về địa chỉ: cskh@matkinh.com.vn.
+                        <br>
+                        <br>
+                        Trân trọng.
+                    </div>
+                </div>
+                <div class="modal-footer hns-modal-footer">
+                    <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="register-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header hns-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h4>HÁI LỘC ĐẦU NĂM</h4>
-                <div class="hns-sub">Đăng nhập thông tin bên để được tham gia quay số</div>
-                <form id="hns-register-form" onsubmit="return false;" class="container">
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Họ & Tên</label>
-                        <div class="col-sm-9">
-                            <input name="name" type="text" class="form-control" id="hns-name"
-                                   value="" placeholder="Họ & Tên">
+    <div id="register-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header hns-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>HÁI LỘC ĐẦU NĂM</h4>
+                    <div class="hns-sub">Đăng nhập thông tin bên để được tham gia quay số</div>
+                    <form id="hns-register-form" onsubmit="return false;" class="container">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Họ & Tên</label>
+                            <div class="col-sm-9">
+                                <input name="name" type="text" class="form-control" id="hns-name" value=""
+                                    placeholder="Họ & Tên">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Điện thoại</label>
-                        <div class="col-sm-9">
-                            <input name="phone" type="number" class="form-control" id="hns-phone"
-                                   placeholder="Điện thoại">
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Điện thoại</label>
+                            <div class="col-sm-9">
+                                <input name="phone" type="number" class="form-control" id="hns-phone"
+                                    placeholder="Điện thoại">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input name="email" type="email" class="form-control" id="hns-email" placeholder="Email">
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input name="email" type="email" class="form-control" id="hns-email"
+                                    placeholder="Email">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <a href="javascript:;" onclick="registerTurn();" class="btn btn-secondary hns-btn-close">Đăng
-                            ký</a>
-                    </div>
-                </form>
+                        <div class="form-group row">
+                            <a href="javascript:;" onclick="registerTurn();"
+                                class="btn btn-secondary hns-btn-close">Đăng
+                                ký</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header hns-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body hns-thele-body">
-                <div class="hns-thele-content"></div>
-            </div>
-            <div class="modal-footer hns-modal-footer">
-                <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+    <div id="alert-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header hns-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body hns-thele-body">
+                    <div class="hns-thele-content"></div>
+                </div>
+                <div class="modal-footer hns-modal-footer">
+                    <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="empty-modal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header hns-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body hns-thele-body">
-                <div class="hns-thele-content">Quà tặng tạm thời đã hết</div>
-            </div>
-            <div class="modal-footer hns-modal-footer">
-                <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+    <div id="empty-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header hns-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body hns-thele-body">
+                    <div class="hns-thele-content">Quà tặng tạm thời đã hết</div>
+                </div>
+                <div class="modal-footer hns-modal-footer">
+                    <a class="btn btn-secondary hns-btn-close" data-dismiss="modal">Đóng</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript">
-    var start = false;
+    <script type="text/javascript">
+        var start = false;
     var timer = null;
     var end = 120;
     var range = 5;
@@ -185,7 +194,7 @@
         });
         $.ajax({
             method: "GET",
-            url: '{{ url('vongquay/register') }}',
+            url: '{{ url('register') }}',
             data: $("#hns-register-form").serialize()
         }).done(function (result) {
             jQuery.unblockUI();
@@ -215,7 +224,7 @@
             });
             $.ajax({
                 method: "GET",
-                url: '{{ url('vongquay/start') }}'
+                url: '{{ url('start') }}'
             }).done(function (result) {
                 jQuery.unblockUI();
                 if (result.code == 1) {
@@ -314,6 +323,7 @@
         $("#empty-modal").modal({backdrop:'static', keyboard:false});
     });
     @endif
-</script>
+    </script>
 </body>
+
 </html>
