@@ -27,7 +27,7 @@ class VongQuayController extends Controller
             $sErrors = 'Không tìm thấy cửa hàng';
         }
 
-        return view('vong-quay/home2', [
+        return view('vong-quay/home3', [
             'sError' => $sErrors,
             'bEmpty' => $bEmpty
         ]);
@@ -162,18 +162,17 @@ class VongQuayController extends Controller
         $oHistory->item_id      = $iItemId;
         $oHistory->save();
         $oCode = Code::whereStoreId($oStore->id)->whereItemId($iItemId)->whereStatus(0)->first();
-        $oItem = Item::find($iItemId);
+        $sCode = '';
         if (empty($oCode)) {
-            if (empty($aRewards)) {
-                $aResult['msg'] = 'Quà tặng tạm thời đã hết';
-
-                return response()->json($aResult);
-            }
+            $iItemId = 2;
+        } else {
+            $oHistory->code_id = $oCode->id;
+            $oHistory->save();
+            $sCode = ': ' . $sCode;
         }
-        $oHistory->code_id = $oCode->id;
-        $oHistory->save();
+        $oItem           = Item::find($iItemId);
         $aResult['code'] = 1;
-        $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$oItem->name} : {$oCode->code} </span> <br>
+        $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$oItem->name}{$sCode} </span> <br>
                     Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
         $aResult['data'] = [
             'result' => $oItem->angle
@@ -205,10 +204,16 @@ class VongQuayController extends Controller
         $aArrayReward  = [];
         if (!empty($oItems) && $oItems->count() > 0) {
             foreach ($oItems as $oItem) {
-                $oLimit = History::whereItemId($oItem->id)->whereStoreId($oStore->id)->get();
-                if ($oLimit->count() < $oItem->number) {
+                if ($oItem->number == -1) {
                     for ($i = 0; $i < $oItem['percent']; $i++) {
                         $aArrayReward[] = $oItem->id;
+                    }
+                } else {
+                    $oLimit = History::whereItemId($oItem->id)->whereStoreId($oStore->id)->get();
+                    if ($oLimit->count() < $oItem->number) {
+                        for ($i = 0; $i < $oItem['percent']; $i++) {
+                            $aArrayReward[] = $oItem->id;
+                        }
                     }
                 }
             }

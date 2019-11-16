@@ -12,69 +12,200 @@ class ItemToStoreSeeder extends Seeder
      */
     public function run()
     {
-        ItemToStore::create(
+        //region aItemStores
+        $aItemStores = [
             [
-                'store_id'  => '1',
-                'item_id'   => '1',
-                'number'    => '2',
-                'percent'   => '15'
-            ]
-        );
-        ItemToStore::create(
+                1 => 30,
+                2 => 20
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '2',
-                'number'    => '2',
-                'percent'   => '10'
-            ]
-        );
-        ItemToStore::create(
+                1 => 40,
+                2 => 30
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '3',
-                'number'    => '2',
-                'percent'   => '15'
-            ]
-        );
-        ItemToStore::create(
+                1 => 40,
+                2 => 30
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '4',
-                'number'    => '2',
-                'percent'   => '10'
-            ]
-        );
-        ItemToStore::create(
+                1 => 15,
+                2 => 10
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '5',
-                'number'    => '2',
-                'percent'   => '15'
-            ]
-        );
-        ItemToStore::create(
+                1 => 10,
+                2 => 5
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '6',
-                'number'    => '2',
-                'percent'   => '10'
-            ]
-        );
-        ItemToStore::create(
+                1 => 10,
+                2 => 5
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '7',
-                'number'    => '2',
-                'percent'   => '15'
-            ]
-        );
-        ItemToStore::create(
+                1 => 10,
+                2 => 5
+            ],
             [
-                'store_id'  => '1',
-                'item_id'   => '8',
-                'number'    => '2',
-                'percent'   => '10'
+                1 => 5,
+                2 => 5
+            ],
+            [
+                1 => 20,
+                2 => 10,
+            ],
+            [
+                1 => 30,
+                2 => 20
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 10,
+                2 => 5
+            ],
+            [
+                1 => 10,
+                2 => 5
+            ],
+            [
+                1 => 5,
+                2 => 5
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 30,
+                2 => 20
+            ],
+            [
+                1 => 20,
+                2 => 20
+            ],
+            [
+                1 => 30,
+                2 => 20
+            ],
+            [
+                1 => 10,
+                2 => 5
+            ],
+            [
+                1 => 5,
+                2 => 5
+            ],
+            [
+                1 => 10,
+                2 => 5
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 20,
+                2 => 20
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 20,
+                2 => 10
+            ],
+            [
+                1 => 40,
+                2 => 30
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 10,
+                2 => 5
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 15,
+                2 => 10
+            ],
+            [
+                1 => 10,
+                2 => 10
+            ],
+            [
+                1 => 0,
+                2 => 0
             ]
-        );
+        ];
+        //endregion
+
+        //region aItemMaps
+        $aItemMaps = [
+            1 => 2,
+            2 => 3,
+            3 => 1,
+            4 => 3,
+            5 => 1,
+            6 => 2,
+            7 => 3,
+            8 => 1
+        ];
+        //endregion
+
+        //region aPercents
+        $aItemsPercent =[
+            1 => 30,
+            2 => 10,
+            3 => 60
+        ];
+        //endregion
+
+        //region Create Store
+        $iStoreId = 0;
+        foreach ($aItemStores as $aItemStore) {
+            $iStoreId++;
+            foreach ($aItemMaps as $iItemId => $iItemMapId) {
+                $aData = [
+                    'store_id' => $iStoreId,
+                    'item_id'  => $iItemId
+                ];
+
+                //Set number
+                if ($iItemMapId == 1) {
+                    $aData['number']  = $aItemStore[$iItemMapId] / 3;
+                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 3;
+                } elseif ($iItemMapId == 2) {
+                    $aData['number']  = $aItemStore[$iItemMapId] / 2;
+                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 2;
+                } else {
+                    $aData['number']  = -1;
+                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 3;
+                }
+                ItemToStore::create($aData);
+            }
+        }
+        //endregion
     }
 }
