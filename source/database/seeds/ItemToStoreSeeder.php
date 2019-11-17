@@ -194,14 +194,14 @@ class ItemToStoreSeeder extends Seeder
 
                 //Set number
                 if ($iItemMapId == 1) {
-                    $aData['number']  = $aItemStore[$iItemMapId] / 3;
-                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 3;
+                    $aData['number']  = round($aItemStore[$iItemMapId] / 3);
+                    $aData['percent'] = round($aItemsPercent[$iItemMapId] / 3);
                 } elseif ($iItemMapId == 2) {
-                    $aData['number']  = $aItemStore[$iItemMapId] / 2;
-                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 2;
+                    $aData['number']  = round($aItemStore[$iItemMapId] / 2);
+                    $aData['percent'] = round($aItemsPercent[$iItemMapId] / 2);
                 } else {
                     $aData['number']  = -1;
-                    $aData['percent'] = $aItemsPercent[$iItemMapId] / 3;
+                    $aData['percent'] = round($aItemsPercent[$iItemMapId] / 3);
                 }
                 ItemToStore::create($aData);
             }
