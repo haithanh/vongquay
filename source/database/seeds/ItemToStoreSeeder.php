@@ -155,8 +155,8 @@ class ItemToStoreSeeder extends Seeder
                 2 => 10
             ],
             [
-                1 => 0,
-                2 => 0
+                1 => 10,
+                2 => 5
             ]
         ];
         //endregion
