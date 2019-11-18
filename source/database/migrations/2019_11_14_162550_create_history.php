@@ -24,7 +24,7 @@ class CreateHistory extends Migration
             $table->integer('code_id')->nullable();
             $table->string('name');
             $table->string('phone');
-            $table->string('email')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }

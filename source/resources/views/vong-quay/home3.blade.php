@@ -144,10 +144,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Địa chỉ</label>
                             <div class="col-sm-9">
-                                <input name="email" type="email" class="form-control" id="hns-email"
-                                    placeholder="Email">
+                                <input name="address" type="text" class="form-control" id="hns-email"
+                                    placeholder="Địa chỉ">
                             </div>
                         </div>
                         <div class="form-group row">

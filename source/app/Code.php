@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereStoreId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $status
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereStatus($value)
  */
 class Code extends Model
 {

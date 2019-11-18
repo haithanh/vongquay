@@ -35,12 +35,12 @@ class VongQuayController extends Controller
 
     public function register(Request $request)
     {
-        $sPhone     = $request->get('phone');
-        $sName      = $request->get('name');
-        $sEmail     = $request->get('email');
-        $sCuaHangId = $request->session()->get('sCuaHangId');
-        $oStore     = Store::whereSeo($sCuaHangId)->first();
-        $aResult    = [
+        $sPhone       = $request->get('phone');
+        $sName        = $request->get('name');
+        $sAddress     = $request->get('address');
+        $sCuaHangId   = $request->session()->get('sCuaHangId');
+        $oStore       = Store::whereSeo($sCuaHangId)->first();
+        $aResult      = [
             'code' => 0,
             'msg'  => '',
             'data' => []
@@ -69,14 +69,14 @@ class VongQuayController extends Controller
             return response()->json($aResult);
         }
 
-        if (!empty($sEmail)) {
-            $bCheckEmail = filter_var($sEmail, FILTER_VALIDATE_EMAIL);
-            if (!$bCheckEmail) {
-                $aResult['msg'] = 'Email không đúng';
+        /* if (!empty($sEmail)) {
+             $bCheckEmail = filter_var($sEmail, FILTER_VALIDATE_EMAIL);
+             if (!$bCheckEmail) {
+                 $aResult['msg'] = 'Email không đúng';
 
-                return response()->json($aResult);
-            }
-        }
+                 return response()->json($aResult);
+             }
+         }*/
 
         $oExist = History::wherePhone($sPhone)->whereBetween('created_at', [date('Y-m-d 00:00:00'), date('Y-m-d 23:59:59')])->first();
 
@@ -95,7 +95,7 @@ class VongQuayController extends Controller
         $oHistory               = new History();
         $oHistory->name         = $sName;
         $oHistory->phone        = $sPhone;
-        $oHistory->email        = $sEmail;
+        $oHistory->address      = $sAddress;
         $oHistory->store_id     = $oStore->id;
         if ($oHistory->save()) {
             $this->controlTurn($request);

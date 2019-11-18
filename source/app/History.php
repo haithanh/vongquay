@@ -15,7 +15,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int|null $code_id
  * @property string $name
  * @property string $phone
- * @property string|null $email
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Code|null $code
@@ -30,7 +29,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereCodeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereItemId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereName($value)
@@ -40,6 +38,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\History withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\History withoutTrashed()
  * @mixin \Eloquent
+ * @property string|null $address
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\History whereAddress($value)
  */
 class History extends Model
 {
@@ -51,7 +51,7 @@ class History extends Model
         'code_id',
         'name',
         'phone',
-        'email'
+        'address'
     ];
 
     public function item()
