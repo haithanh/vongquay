@@ -12,6 +12,17 @@
 */
 
 Route::group([
+    'prefix' => '/result'
+], function () {
+    Route::group([
+        'middleware' => []
+    ], function () {
+        Route::get('{sStoreSeo}', 'VongQuay\VongQuayController@result');
+        Route::get('', 'VongQuay\VongQuayController@result');
+    });
+});
+
+Route::group([
     'prefix' => '/'
 ], function () {
     Route::group([

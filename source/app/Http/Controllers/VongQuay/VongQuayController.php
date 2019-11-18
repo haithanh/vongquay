@@ -222,4 +222,27 @@ class VongQuayController extends Controller
 
         return $aArrayReward;
     }
+
+    public function result(Request $request, $sStoreSeo = null)
+    {
+        $sView               = 'vong-quay/result';
+        $iStoreId            = 0;
+        if (!empty($sStoreSeo)) {
+            $oStore = Store::whereSeo($sStoreSeo)->first();
+            if (!empty($oStore)) {
+                $iStoreId = $oStore->id;
+            }
+        }
+        if (!empty($iStoreId)) {
+            $oHistories = History::whereStoreId($iStoreId);
+        } else {
+            $oHistories = History::orderBy('id', 'DESC');
+        }
+        $oHistories->with('item');
+        $oHistories->with('store');
+        $oHistories->with('code');
+        $oHistories = $oHistories->orderBy('id', 'DESC')->get();
+
+        return view($sView, compact('oHistories'));
+    }
 }
