@@ -161,15 +161,26 @@ class VongQuayController extends Controller
         $iItemId                = $aRewards[$iRandom];
         $oHistory->item_id      = $iItemId;
         $oHistory->save();
+
         $oCode = Code::whereStoreId($oStore->id)->whereItemId($iItemId)->whereStatus(0)->first();
         $sCode = '';
         if (empty($oCode)) {
             $iItemId = 2;
         } else {
-            $oHistory->code_id = $oCode->id;
-            $oHistory->save();
-            $sCode = ': ' . $oCode->code;
+            $iTotalCode             = Code::whereStoreId($oStore->id)->count();
+            $iTodayTotalCode        = History::whereStoreId($oStore->id)->whereNotNull('code_id')->whereBetween('created_at', [date('Y-m-d 00:00:00'), date('Y-m-d 23:59:59')])->count();
+            if ($iTodayTotalCode <= $iTotalCode / 2) {
+                $oHistory->code_id      = $oCode->id;
+                $oHistory->save();
+                $oCode->status = 1;
+                $oCode->save();
+                $sCode = ': ' . $oCode->code;
+            } else {
+                $iItemId = 2;
+            }
         }
+        $oHistory->item_id      = $iItemId;
+        $oHistory->save();
         $oItem           = Item::find($iItemId);
         $aResult['code'] = 1;
         $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$oItem->name}{$sCode} </span> <br>
