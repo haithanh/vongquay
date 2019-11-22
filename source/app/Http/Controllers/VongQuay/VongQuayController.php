@@ -159,7 +159,7 @@ class VongQuayController extends Controller
         }
         $iRandom                = intval(rand(0, count($aRewards) - 1));
         $iItemId                = $aRewards[$iRandom];
-        var_dump($aRewards)
+        var_dump($aRewards);
         var_dump($iItemId);
         die;
         $oHistory->item_id      = $iItemId;
