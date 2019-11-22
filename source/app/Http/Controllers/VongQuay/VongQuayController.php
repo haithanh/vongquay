@@ -168,7 +168,7 @@ class VongQuayController extends Controller
         } else {
             $oHistory->code_id = $oCode->id;
             $oHistory->save();
-            $sCode = ': ' . $sCode;
+            $sCode = ': ' . $oCode->code;
         }
         $oItem           = Item::find($iItemId);
         $aResult['code'] = 1;
