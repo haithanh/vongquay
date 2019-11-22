@@ -159,6 +159,9 @@ class VongQuayController extends Controller
         }
         $iRandom                = intval(rand(0, count($aRewards) - 1));
         $iItemId                = $aRewards[$iRandom];
+        var_dump($aRewards)
+        var_dump($iItemId);
+        die;
         $oHistory->item_id      = $iItemId;
         $oHistory->save();
         $oCode = Code::whereStoreId($oStore->id)->whereItemId($iItemId)->whereStatus(0)->first();
@@ -205,13 +208,13 @@ class VongQuayController extends Controller
         if (!empty($oItems) && $oItems->count() > 0) {
             foreach ($oItems as $oItem) {
                 if ($oItem->number == -1) {
-                    for ($i = 0; $i < $oItem['percent']; $i++) {
+                    for ($i = 0; $i < $oItem->percent; $i++) {
                         $aArrayReward[] = $oItem->id;
                     }
                 } else {
                     $oLimit = History::whereItemId($oItem->id)->whereStoreId($oStore->id)->get();
                     if ($oLimit->count() < $oItem->number) {
-                        for ($i = 0; $i < $oItem['percent']; $i++) {
+                        for ($i = 0; $i < $oItem->percent; $i++) {
                             $aArrayReward[] = $oItem->id;
                         }
                     }
