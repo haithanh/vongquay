@@ -209,13 +209,13 @@ class VongQuayController extends Controller
             foreach ($oItems as $oItem) {
                 if ($oItem->number == -1) {
                     for ($i = 0; $i < $oItem->percent; $i++) {
-                        $aArrayReward[] = $oItem->id;
+                        $aArrayReward[] = $oItem->item_id;
                     }
                 } else {
                     $oLimit = History::whereItemId($oItem->id)->whereStoreId($oStore->id)->get();
                     if ($oLimit->count() < $oItem->number) {
                         for ($i = 0; $i < $oItem->percent; $i++) {
-                            $aArrayReward[] = $oItem->id;
+                            $aArrayReward[] = $oItem->item_id;
                         }
                     }
                 }
