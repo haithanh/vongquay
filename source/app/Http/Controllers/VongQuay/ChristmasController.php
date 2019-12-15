@@ -9,8 +9,9 @@ use App\Item;
 use App\ItemToStore;
 use App\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class VongQuayController extends Controller
+class ChristmasController extends Controller
 {
     public function home(Request $request, $sCuaHangId)
     {
@@ -27,7 +28,7 @@ class VongQuayController extends Controller
             $sErrors = 'Không tìm thấy cửa hàng';
         }
 
-        return view('vong-quay/home3', [
+        return view('vong-quay/christmas', [
             'sError' => $sErrors,
             'bEmpty' => $bEmpty
         ]);
@@ -153,37 +154,37 @@ class VongQuayController extends Controller
         $aRewards = $this->getArrayReward($oStore);
 
         if (empty($aRewards)) {
-            $aResult['msg'] = 'Quà tặng tạm thời đã hết';
-
-            return response()->json($aResult);
+            $aRewards = [2, 4, 7];
         }
         $iRandom                = intval(rand(0, count($aRewards) - 1));
         $iItemId                = $aRewards[$iRandom];
         $oHistory->item_id      = $iItemId;
         $oHistory->save();
-        $oCode = Code::whereStoreId($oStore->id)->whereItemId($iItemId)->whereStatus(0)->first();
-        $sCode = '';
+        $oItem  = Item::find($iItemId);
+        $sCode  = '';
+        DB::beginTransaction();
+        if ($oItem->code_type > 0) {
+            $oCode  = Code::whereCodeType($oItem->code_type)->whereStatus(0)->lockForUpdate()->first();
+        }
+
         if (empty($oCode)) {
             $iItemId = 2;
         } else {
-            $iTotalCode             = Code::whereStoreId($oStore->id)->count();
-            $iTodayTotalCode        = History::whereStoreId($oStore->id)->whereNotNull('code_id')->whereBetween('created_at', [date('Y-m-d 00:00:00'), date('Y-m-d 23:59:59')])->count();
-            if ($iTodayTotalCode <= $iTotalCode / 2) {
-                $oHistory->code_id      = $oCode->id;
-                $oHistory->save();
-                $oCode->status = 1;
-                $oCode->save();
-                $sCode = ': ' . $oCode->code;
-            } else {
-                $iItemId = 2;
-            }
+            $oCode->store_id = $oStore->id;
+            $oCode->status   = 1;
+            $oCode->save();
+            $oHistory->code_id = $oCode->id;
+            $oHistory->save();
+
+            $sCode = ': ' . $oCode->code;
         }
-        $oHistory->item_id      = $iItemId;
+        $oHistory->item_id = $iItemId;
         $oHistory->save();
-        $oItem           = Item::find($iItemId);
+        DB::commit();
         $aResult['code'] = 1;
-        $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được phần quà: <br> <span style='font-weight:bold;'>{$oItem->name}{$sCode} </span> <br>
-                    Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
+        $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được
+    phần quà: <br> <span style='font-weight:bold;'>{$oItem->name}{$sCode} </span> <br>
+    Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
         $aResult['data'] = [
             'result' => $oItem->angle
         ];
@@ -193,7 +194,11 @@ class VongQuayController extends Controller
 
     public function test(Request $request)
     {
-        $this->inCreateContact($request->get('name'), $request->get('phone'), $request->get('email'));
+        $this->inCreateContact(
+            $request->get('name'),
+            $request->get('phone'),
+            $request->get('email')
+        );
         // $this->inApplyID(319800);
     }
 
@@ -210,8 +215,8 @@ class VongQuayController extends Controller
 
     private function getArrayReward(Store $oStore)
     {
-        $oItems        = ItemToStore::whereStoreId($oStore->id)->get();
-        $aArrayReward  = [];
+        $oItems       = ItemToStore::whereStoreId($oStore->id)->get();
+        $aArrayReward = [];
         if (!empty($oItems) && $oItems->count() > 0) {
             foreach ($oItems as $oItem) {
                 if ($oItem->number == -1) {
@@ -235,8 +240,8 @@ class VongQuayController extends Controller
 
     public function result(Request $request, $sStoreSeo = null)
     {
-        $sView               = 'vong-quay/result';
-        $iStoreId            = 0;
+        $sView    = 'vong-quay/result';
+        $iStoreId = 0;
         if (!empty($sStoreSeo)) {
             $oStore = Store::whereSeo($sStoreSeo)->first();
             if (!empty($oStore)) {

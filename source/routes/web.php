@@ -17,8 +17,8 @@ Route::group([
     Route::group([
         'middleware' => []
     ], function () {
-        Route::get('{sStoreSeo}', 'VongQuay\VongQuayController@result');
-        Route::get('', 'VongQuay\VongQuayController@result');
+        Route::get('{sStoreSeo}', 'VongQuay\ChristmasController@result');
+        Route::get('', 'VongQuay\ChristmasController@result');
     });
 });
 
@@ -28,9 +28,9 @@ Route::group([
     Route::group([
         'middleware' => []
     ], function () {
-        Route::get('register', 'VongQuay\VongQuayController@register');
-        Route::get('start', 'VongQuay\VongQuayController@start');
-        Route::get('test', 'VongQuay\VongQuayController@test');
-        Route::get('{sCuaHangId}', 'VongQuay\VongQuayController@home');
+        Route::get('register', 'VongQuay\ChristmasController@register');
+        Route::get('start', 'VongQuay\ChristmasController@start');
+        Route::get('test', 'VongQuay\ChristmasController@test');
+        Route::get('{sCuaHangId}', 'VongQuay\ChristmasController@home');
     });
 });

@@ -31,6 +31,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Item withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Item withoutTrashed()
  * @mixin \Eloquent
+ * @property int $code_type
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Item whereCodeType($value)
  */
 class Item extends Model
 {
@@ -40,6 +42,7 @@ class Item extends Model
     protected $fillable = [
         'name',
         'seo',
-        'angle'
+        'angle',
+        'code_type'
     ];
 }

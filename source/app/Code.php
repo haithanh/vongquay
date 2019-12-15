@@ -21,12 +21,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereCode($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereItemId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereStoreId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property int|null $status
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereStatus($value)
+ * @property int $code_type
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Code whereCodeType($value)
  */
 class Code extends Model
 {
@@ -34,7 +35,7 @@ class Code extends Model
 
     protected $fillable = [
         'store_id',
-        'item_id',
+        'code_type',
         'code',
         'status'
     ];
