@@ -108,7 +108,7 @@ class ChristmasController extends Controller
         }
 
         $aResult['code'] = 1;
-        $aResult['msg']  = 'Bạn đã được cộng thêm lượt';
+        $aResult['msg']  = 'Mời bạn bắt đầu quay';
 
         return response()->json($aResult);
     }
@@ -184,7 +184,7 @@ class ChristmasController extends Controller
         $aResult['code'] = 1;
         $aResult['msg']  = "<p style='text-align: center;'>Chúc mừng bạn đã nhận được
     phần quà: <br> <span style='font-weight:bold;'>{$oItem->name}{$sCode} </span> <br>
-    Cảm ơn bạn đã mua hàng tại Mắt Việt. Mời bạn tới quầy thanh toán để nhận quà.</p>";
+    Cảm ơn bạn đã mua hàng tại Mắt Việt.</p>";
         $aResult['data'] = [
             'result' => $oItem->angle
         ];

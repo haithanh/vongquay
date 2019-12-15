@@ -250,7 +250,7 @@
                     $(".hns-start-button").addClass('start');
                     setTimeout(function () {
                         stopPin();
-                    }, 6000);
+                    }, 4000);
                 } else if (result.code == -1) {
                     showRegister();
                     start = false;
