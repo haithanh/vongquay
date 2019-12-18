@@ -156,5 +156,29 @@ class StoreSeeder extends Seeder
             'name' => 'MV Mega Market Bình Phú',
             'seo'  => 'mv-mega-market-binh-phu'
         ]);
+        Store::create([
+            'name' => 'MV Kha Vạn Cân',
+            'seo'  => 'mv-kha-van-can'
+        ]);
+        Store::create([
+            'name' => 'MV Quang Trung',
+            'seo'  => 'mv-quang-trung'
+        ]);
+        Store::create([
+            'name' => 'MV Lê Quang Định',
+            'seo'  => 'mv-le-quang-dinh'
+        ]);
+        Store::create([
+            'name' => 'MV Now Zone',
+            'seo'  => 'mv-now-zone'
+        ]);
+        Store::create([
+            'name' => 'MV Hà Đông',
+            'seo'  => 'mv-ha-dong'
+        ]);
+        Store::create([
+            'name' => 'MV Nguyễn Thị Thập',
+            'seo'  => 'mv-nguyen-thi-thap'
+        ]);
     }
 }
