@@ -40,16 +40,7 @@
                     <tbody>
                         @if($oHistories)
                         @foreach ($oHistories as $oHistory)
-                        <tr>
-                            <td>{{$oHistory->id}}</td>
-                            <td>@if($oHistory->store) {{$oHistory->store->name}} @endif</td>
-                            <td>@if($oHistory->item) {{$oHistory->item->name}} @endif</td>
-                            <td>@if($oHistory->code) {{$oHistory->code->code}} @endif</td>
-                            <td>@if($oHistory->name) {{$oHistory->name}} @endif</td>
-                            <td>@if($oHistory->phone) {{$oHistory->phone}} @endif</td>
-                            <td>@if($oHistory->address) {{$oHistory->address}} @endif</td>
-                            <td>@if($oHistory->created_at) {{$oHistory->created_at}} @endif</td>
-                        </tr>
+
                         @endforeach
                         @endif
                     </tbody>
