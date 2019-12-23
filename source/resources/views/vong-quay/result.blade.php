@@ -47,7 +47,7 @@
                             <td>@if($oHistory->code) {{$oHistory->code->code}} @endif</td>
                             <td>{{$oHistory->name}}</td>
                             <td>{{$oHistory->phone}}</td>
-                            <td>{{$oHistory->address}}</td>
+                            <td></td>
                             <td>{{$oHistory->created_at}}</td>
                         </tr>
                         @endforeach
