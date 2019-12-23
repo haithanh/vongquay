@@ -257,7 +257,6 @@ class ChristmasController extends Controller
         $oHistories->with('store');
         $oHistories->with('code');
         $oHistories = $oHistories->orderBy('id', 'DESC')->get();
-        dd($oHistories->toArray());
 
         return view($sView, compact('oHistories'));
     }
